@@ -1,24 +1,8 @@
-# frontend
+# vue-narito-blog4
 
-## Project setup
-```
-npm install
-```
+シンプルなブログ
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+[動いているサイト](https://blog.narito.ninja)
 
-### Compiles and minifies for production
-```
-npm run build
-```
+[サーバー側の例(Django REST framework)](https://github.com/naritotakizawa/django-narito-blog4)
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
