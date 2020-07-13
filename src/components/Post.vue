@@ -1,7 +1,7 @@
 <template>
     <main>
         <div v-if="!post" class="loader"></div>
-        <article class="detail container" v-else :key="post.id">
+        <article class="container" v-else :key="post.id">
             <header>
                 <h1>{{ post.title }}</h1>
                 <time>{{ getPostDateTime }}</time>
@@ -9,7 +9,7 @@
                 <span class="tag" v-for="tag of post.tags" :key="tag.id">{{ tag.name }}</span>
             </header>
 
-            <div id="main" :key="post.id">
+            <div id="post" :key="post.id">
                 <aside id="side">
                     <nav id="toc" ref="toc">
                         <p id="tocTitle">目次</p>
@@ -253,6 +253,10 @@
 </script>
 
 <style scoped>
+    main {
+        min-height: calc(100vh - 145px);
+    }
+
     /* 記事のタイトル部分 */
     header {
         margin: 64px 0 100px 0;
@@ -507,7 +511,7 @@
     }
 
     @media (min-width: 1024px) {
-        #main {
+        #post {
             display: grid;
             grid-template-columns: 600px 300px;
             column-gap: 60px;

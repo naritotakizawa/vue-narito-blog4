@@ -27,7 +27,7 @@
             </div>
         </form>
         <hr>
-        <section class="container" id="main">
+        <section class="container" id="posts-wrapper">
             <div v-if="!postResult" class="loader" id="loading"></div>
             <div id="posts" v-else>
                 <h1>{{ postResult.count }}件の検索結果</h1>
@@ -166,6 +166,10 @@
 </script>
 
 <style scoped>
+    main {
+        min-height: calc(100vh - 177px);
+    }
+
     /* フォーム関連 */
     #input-with-icon {
         margin: 32px 0 0 0;
@@ -296,7 +300,7 @@
     }
 
     @media (min-width: 1024px) {
-        #main {
+        #posts-wrapper {
             display: grid;
             grid-template-columns: 600px 300px;
             column-gap: 60px;
