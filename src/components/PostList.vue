@@ -254,6 +254,10 @@
         cursor: pointer;
     }
 
+    #tags > .tag:hover {
+        text-decoration: underline;
+    }
+
     .select {
         color: #0000ee;
     }
