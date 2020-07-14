@@ -92,6 +92,10 @@
         margin-top: 32px;
     }
 
+    .post:hover {
+        text-decoration: underline;
+    }
+
     .post .title {
         font-size: 16px;
         font-weight: bold;
