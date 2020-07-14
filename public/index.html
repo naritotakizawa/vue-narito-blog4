@@ -21,11 +21,16 @@
     <% if(VUE_APP_ONESIGNAL) { %>
         <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
         <script>
+          const obj = {
+            appId: "<%= VUE_APP_ONESIGNAL %>",
+          }
+          const safariWebId = "<%= VUE_APP_ONESIGNAL_SAFARI %>"
+          if (safariWebId) {
+            obj.safari_web_id = safariWebId
+          }
           window.OneSignal = window.OneSignal || [];
           OneSignal.push(function() {
-            OneSignal.init({
-              appId: "<%= VUE_APP_ONESIGNAL %>",
-            });
+            OneSignal.init(obj);
           });
         </script>
     <% } %>
