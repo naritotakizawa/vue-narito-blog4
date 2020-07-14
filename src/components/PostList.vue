@@ -230,6 +230,7 @@
         text-align: right;
         cursor: pointer;
         padding: 32px 0 12px 0;
+        justify-self: right;
     }
 
     #next-icon {
