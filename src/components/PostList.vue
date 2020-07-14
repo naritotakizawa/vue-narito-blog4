@@ -41,12 +41,9 @@
                 </router-link>
 
                 <nav id="page" :key="getKey">
-                    <ul>
-                        <li v-for="i of postResult.total_pages" :key="i">
-                            <span v-if="i === postResult.current_page">{{ i }}</span>
-                            <router-link v-else :to="getPageURL(i)">{{ i }}</router-link>
-                        </li>
-                    </ul>
+                    <router-link v-if="postResult.current_page > 1" :to="getPageURL(postResult.current_page-1)" id="prev">前へ</router-link>
+                    <span>{{ postResult.current_page }} / {{ postResult.total_pages }}</span>
+                    <router-link v-if="postResult.current_page < postResult.total_pages" :to="getPageURL(postResult.current_page+1)" id="next">次へ</router-link>
                 </nav>
             </div>
             <Adsense v-if="hasAd" :data-ad-client="adClient" :data-ad-slot="adSlot" id="ad"></Adsense>
@@ -285,23 +282,24 @@
     }
 
     nav#page {
-        margin: 32px 0 0 0;
-        text-align: center;
-    }
-
-    nav#page ul, nav#page li {
-        list-style-type: none;
-    }
-
-    nav#page li {
-        display: inline-block;
         font-size: 16px;
-        margin-right: 16px;
+        margin: 32px 0 0 0;
     }
 
     nav#page a {
         text-decoration: none;
         color: #0000ee;
+        width: 44px;
+        display: inline-block;
+    }
+
+    #prev {
+        margin-right: 16px;
+    }
+
+    #next {
+        margin-left: 16px;
+        text-align: right;
     }
 
     @media (min-width: 1024px) {
