@@ -21,7 +21,7 @@
 <style scoped>
     header {
         height: 45px;
-        background-color: #000;
+        background-color: #282a36;
         color: #ccc;
     }
 

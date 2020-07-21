@@ -30,7 +30,7 @@
 <style scoped>
     footer {
         margin-top: 100px;
-        background-color: #000;
+        background-color: #282a36;
         color: #ccc;
         padding: 24px 0;
         font-size: 14px;
